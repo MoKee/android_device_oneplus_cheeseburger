@@ -141,6 +141,7 @@ vendor/lib64/libdpmtcm.so
 
 # DRM
 bin/qseecomd
+bin/init.qti.qseecomd.sh
 vendor/bin/qseeproxydaemon
 vendor/lib/libQSEEComAPI.so
 vendor/lib/libspl.so
