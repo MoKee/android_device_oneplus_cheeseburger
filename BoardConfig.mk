@@ -22,14 +22,12 @@
 # definition file).
 #
 
-# Inherit from oppo-common
--include device/oppo/common/BoardConfigCommon.mk
+# Inherit from oneplus-common
+-include device/oneplus/common/BoardConfigCommon.mk
 
 PLATFORM_PATH := device/oneplus/cheeseburger
 
 TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
-
-BOARD_VENDOR := oneplus
 
 # Assertions
 TARGET_BOARD_INFO_FILE := $(PLATFORM_PATH)/board-info.txt
