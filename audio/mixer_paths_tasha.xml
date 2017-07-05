@@ -590,7 +590,7 @@
     <ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia5" value="0" />
     <ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia7" value="0" />
     <ctl name="mono Profile" value="music_hq" />
-	<ctl name="L21 Power" value="0" />
+    <ctl name="BOB Power" value="0" />
 <!--#endif-->
     <!-- split a2dp -->
     <ctl name="BT SampleRate" value="KHZ_8" />
@@ -2275,10 +2275,7 @@
     </path>
 
     <path name="handset">
-<!--#ifdef VENDOR_EDIT
-/* zhiguang.su@MultiMedia.AudioDrv on 2017-04-14,add for L21 power */-->
-		<ctl name="L21 Power" value="1" />
- <!-- #endif VENDOR_EDIT-->
+        <ctl name="BOB Power" value="1" />
         <ctl name="COMP7 Switch" value="1" />
         <ctl name="SLIM RX0 MUX" value="AIF_MIX1_PB" />
         <ctl name="SLIM_0_RX Channels" value="One" />
@@ -2365,10 +2362,7 @@
     </path>
 
     <path name="anc-handset">
-<!--#ifdef VENDOR_EDIT
-/* zhiguang.su@MultiMedia.AudioDrv on 2017-04-14,add for L21 power */-->
-	<ctl name="L21 Power" value="1" />
- <!-- #endif VENDOR_EDIT-->
+        <ctl name="BOB Power" value="1" />
         <ctl name="ANC Function" value="ON" />
         <ctl name="ANC Slot" value="6" />
         <ctl name="SLIM RX0 MUX" value="AIF_MIX1_PB" />
