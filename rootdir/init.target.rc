@@ -195,7 +195,10 @@ on boot
     chmod 660 /sys/class/leds/blue/duty_pcts
 
     # Vibrator
-    chown system system /sys/class/timed_output/vibrator/vmax
+    chown system system /sys/class/timed_output/vibrator/vtg_default
+    chown system system /sys/class/timed_output/vibrator/vtg_level
+    chown system system /sys/class/timed_output/vibrator/vtg_max
+    chown system system /sys/class/timed_output/vibrator/vtg_min
     chown system system /sys/class/timed_output/vibrator/wf_s0
     chown system system /sys/class/timed_output/vibrator/wf_s1
     chown system system /sys/class/timed_output/vibrator/wf_s2
