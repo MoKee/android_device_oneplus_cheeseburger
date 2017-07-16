@@ -47,16 +47,12 @@ public class DisplayModeControl {
     private static final DisplayMode MODE_SRGB
             = new DisplayMode(1, "srgb");
 
-    private static final DisplayMode MODE_ADOBE_RGB
-            = new DisplayMode(2, "adobergb");
-
     private static final DisplayMode MODE_DCI_P3
             = new DisplayMode(3, "dcip3");
 
     private static final DisplayMode[] MODES = new DisplayMode[] {
         MODE_NONE,
         MODE_SRGB,
-        MODE_ADOBE_RGB,
         MODE_DCI_P3,
     };
 
