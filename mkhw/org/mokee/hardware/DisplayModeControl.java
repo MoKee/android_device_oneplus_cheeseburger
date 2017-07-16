@@ -35,8 +35,11 @@ import org.mokee.internal.util.FileUtils;
 
 public class DisplayModeControl {
 
-    private static final String PROFILE_PATH =
-            "/sys/class/graphics/fb0/color_profile";
+    private static final String PROFILE_PATH
+            = "/sys/class/graphics/fb0/color_profile";
+
+    private static final String LOCAL_MODE_ID
+            = "/data/misc/display/livedisplay_mode";
 
     private static final DisplayMode MODE_NONE
             = new DisplayMode(0, "basic");
@@ -81,15 +84,19 @@ public class DisplayModeControl {
      * null if no mode is selected.
      */
     public static DisplayMode getCurrentMode() {
-        int mode = Integer.parseInt(FileUtils.readOneLine(PROFILE_PATH));
+        String line = FileUtils.readOneLine(LOCAL_MODE_ID);
+        if (line == null) {
+            return null;
+        }
 
+        int mode = Integer.parseInt(line);
         for (DisplayMode item : MODES) {
             if (item.id == mode) {
                 return item;
             }
         }
 
-        return MODE_NONE;
+        return null;
     }
 
     /*
@@ -101,7 +108,9 @@ public class DisplayModeControl {
     public static boolean setMode(DisplayMode mode, boolean makeDefault) {
         for (DisplayMode item : MODES) {
             if (item.name.equals(mode.name)) {
-                return FileUtils.writeLine(PROFILE_PATH, String.valueOf(item.id));
+                String value = String.valueOf(item.id);
+                return FileUtils.writeLine(PROFILE_PATH, value) &&
+                    (!makeDefault || FileUtils.writeLine(LOCAL_MODE_ID, value));
             }
         }
 
