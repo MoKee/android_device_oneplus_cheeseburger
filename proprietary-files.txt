@@ -294,6 +294,13 @@ etc/firmware/a540_zap.b02
 etc/firmware/a540_zap.elf
 etc/firmware/a540_zap.mdt
 
+# IFAA
+bin/ifaadaemon
+lib/libteeclientjni.so
+lib64/libteeclientjni.so
+lib64/libteeclientjniv2.so
+priv-app/IFAAService/IFAAService.apk
+
 # IPA
 bin/ipacm-diag
 etc/firmware/ipa_fws.b00
