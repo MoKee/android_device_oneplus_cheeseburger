@@ -69,16 +69,10 @@ volume index from 0 to 100.
                                        ref="DEFAULT_DEVICE_CATEGORY_EXT_MEDIA_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_MUSIC" deviceCategory="DEVICE_CATEGORY_HEADSET">
     <!-- Default is headset Media Volume Curve -->
-    <!--#ifdef VENDOR_EDIT
-        <point>1,-6100</point>
-        <point>20,-4300</point>
-        <point>60,-1400</point>
-        <point>100,-150</point-->
-        <point>1,-6100</point>
-        <point>20,-4300</point>
-        <point>60,-1400</point>
+        <point>1,-8000</point>
+        <point>30,-5000</point>
+        <point>70,-3000</point>
         <point>100,0</point>
-        <!--#endif /*VENDOR_EDIT*/-->
     </volume>
     <volume stream="AUDIO_STREAM_MUSIC" deviceCategory="DEVICE_CATEGORY_SPEAKER"
                                         ref="DEFAULT_DEVICE_CATEGORY_SPEAKER_VOLUME_CURVE"/>
