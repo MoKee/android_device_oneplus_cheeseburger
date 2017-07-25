@@ -289,6 +289,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.uicc.sh:system/etc/init.qcom.uicc.sh \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh
 
+# Releasetools
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fbe_check.sh:install/bin/fbe_check.sh
+
 # RIL
 PRODUCT_PACKAGES += \
     librmnetctl \
