@@ -15,6 +15,10 @@ etc/acdbdata/adsp_avs_config.acdb
 # Camera
 bin/mm-qcamera-daemon
 etc/camera/camera_config.xml
+etc/camera/cp/FusionCalibrationParams.bin
+etc/camera/cp/SystemParamsBokeh.bin
+etc/camera/cp/SystemParamsFusion.bin
+etc/camera/cp/CPCalibrationData.bin
 etc/camera/imx350_chromatix.xml
 etc/camera/imx371_chromatix.xml
 etc/camera/imx398_chromatix.xml
@@ -165,6 +169,7 @@ vendor/lib/libchromatix_imx398_3a_4656x3496_30fps_preview.so
 vendor/lib/libchromatix_imx398_3a_hq.so
 vendor/lib/libchromatix_imx398_3a_manual.so
 vendor/lib/libchromatix_imx398_3a_panorama.so
+vendor/lib/libchromatix_imx398_3a_wechat_preview.so
 vendor/lib/libchromatix_imx398_common.so
 vendor/lib/libchromatix_imx398_cpp_1476x834_120fps_video.so
 vendor/lib/libchromatix_imx398_cpp_2328x1304_60fps_video.so
@@ -187,7 +192,9 @@ vendor/lib/libchromatix_imx398_isp_4656x3496_30fps_preview.so
 vendor/lib/libchromatix_imx398_isp_4656x3496_30fps_snapshot.so
 vendor/lib/libchromatix_imx398_isp_manual.so
 vendor/lib/libchromatix_imx398_isp_panorama.so
+vendor/lib/libchromatix_imx398_isp_zsl_snapshot.so
 vendor/lib/libchromatix_imx398_postproc.so
+vendor/lib/libchromatix_imx398_preview_1080p_cpp.so
 
 # Camera postprocessing
 etc/fsync_db.config
