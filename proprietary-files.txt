@@ -306,7 +306,7 @@ bin/ifaadaemon
 lib/libteeclientjni.so
 lib64/libteeclientjni.so
 lib64/libteeclientjniv2.so
-priv-app/IFAAService/IFAAService.apk
+-priv-app/IFAAService/IFAAService.apk
 
 # IPA
 bin/ipacm-diag
