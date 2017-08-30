@@ -158,6 +158,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Snap
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/camera/camera_config.xml:system/etc/camera/camera_config.xml \
+    $(LOCAL_PATH)/camera/imx350_chromatix.xml:system/etc/camera/imx350_chromatix.xml \
+    $(LOCAL_PATH)/camera/imx371_chromatix.xml:system/etc/camera/imx371_chromatix.xml \
+    $(LOCAL_PATH)/camera/imx398_chromatix.xml:system/etc/camera/imx398_chromatix.xml
+
 # Configpanel
 PRODUCT_PACKAGES += \
     ConfigPanel
