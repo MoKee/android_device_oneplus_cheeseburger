@@ -1,1 +1,1 @@
-allow radio qcom_ims_prop:property_service set;
+allow radio sms_secure_service:service_manager { add };
