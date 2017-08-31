@@ -37,7 +37,7 @@ TARGET_OTA_ASSERT_DEVICE := OnePlus5,cheeseburger
 TARGET_USE_SDCLANG := true
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := msm8998
+TARGET_BOOTLOADER_BOARD_NAME := cheeseburger
 TARGET_NO_BOOTLOADER := true
 
 # Platform
