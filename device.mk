@@ -378,6 +378,10 @@ PRODUCT_PACKAGES += \
     context_hub.default \
     sensors.cheeseburger
 
+# Shims
+PRODUCT_PACKAGES += \
+    libshims_system_properties
+
 # SOTER (Fingerprint support for WeChat Payment)
 PRODUCT_PACKAGES += \
     soter
