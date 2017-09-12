@@ -385,6 +385,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     soter
 
+# Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@1.0-impl \
+
 # Vehicle network (for slim_daemon)
 PRODUCT_PACKAGES += \
     libvehiclenetwork-native
