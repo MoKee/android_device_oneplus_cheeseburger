@@ -4,7 +4,7 @@ ro.display.series=OnePlus 5
 persist.aanc.enable=true
 
 # Audio
-af.fast_track_multiplier=2
+af.fast_track_multiplier=1
 audio_hal.period_size=192
 ro.qc.sdk.audio.fluencetype=fluencepro
 persist.audio.fluence.voicecall=true
@@ -105,6 +105,7 @@ media.aac_51_output_enabled=true
 mm.enable.smoothstreaming=true
 persist.mm.enable.prefetch=true
 vidc.enc.dcvs.extra-buff-count=2
+persist.media.treble_omx=true
 
 # NFC
 ro.nfc.port=I2C
