@@ -165,10 +165,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/camera/imx371_chromatix.xml:system/etc/camera/imx371_chromatix.xml \
     $(LOCAL_PATH)/camera/imx398_chromatix.xml:system/etc/camera/imx398_chromatix.xml
 
-# Configpanel
-PRODUCT_PACKAGES += \
-    ConfigPanel
-
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
     cneapiclient \
@@ -190,7 +186,9 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
-    fingerprintd \
+    fingerprintd
+
+PRODUCT_PACKAGES += \
     OneplusPocketMode
 
 # For android_filesystem_config.h
