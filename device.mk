@@ -171,6 +171,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/camera/imx371_chromatix.xml:system/etc/camera/imx371_chromatix.xml \
     $(LOCAL_PATH)/camera/imx398_chromatix.xml:system/etc/camera/imx398_chromatix.xml
 
+# Configstore
+PRODUCT_PACKAGES += \
+    android.hardware.configstore@1.0-service
+
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
     cneapiclient \
