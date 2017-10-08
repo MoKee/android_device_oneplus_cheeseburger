@@ -236,6 +236,9 @@ on boot
     chown system system /sys/class/timed_output/vibrator/wf_rep
     chown system system /sys/class/timed_output/vibrator/wf_s_rep
 
+    # Wi-Fi
+    chown wifi wifi /sys/module/wlan/parameters/fwpath
+
 #fingerprint service
 service fingerprintd /system/bin/fingerprintd
     class late_start

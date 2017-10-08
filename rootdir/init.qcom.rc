@@ -431,6 +431,9 @@ on property:persist.debug.trace=1
     mkdir /data/core 0777 root root
     write /proc/sys/kernel/core_pattern "/data/core/%E.%p.%e"
 
+on property:init.svc.wificond=running
+    write /sys/kernel/boot_wlan/boot_wlan 1
+
 on property:bluetooth.sap.status=running
     start bt-sap
 
