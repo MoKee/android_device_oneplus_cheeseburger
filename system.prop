@@ -60,7 +60,7 @@ ro.bluetooth.wipower=true
 ro.qualcomm.cabl=0
 
 # Camera
-camera.aux.packagelist=org.codeaurora.snapcam,com.oneplus.camera
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.oneplus.camera
 
 persist.ts.rtmakeup=false
 
