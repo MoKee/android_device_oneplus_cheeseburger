@@ -16,15 +16,14 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := \
-    bionic/system_properties.cpp
+LOCAL_SRC_FILES := rilqc_shim.cpp
 
 LOCAL_C_INCLUDES := \
     bionic/libc/include
 
 LOCAL_SHARED_LIBRARIES := libc
 
-LOCAL_MODULE := libshims_system_properties
+LOCAL_MODULE := libshims_rilqc
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
