@@ -33,7 +33,7 @@ on early-init
     chmod 0755 /sys/kernel/debug
 
 on init
-    export LD_SHIM_LIBS "/system/vendor/lib64/libril-qc-qmi-1.so|libshims_rilqc.so:/system/lib/hw/camera.msm8998.so|libshim_camera.so"
+    export LD_SHIM_LIBS "/system/vendor/lib64/libril-qc-qmi-1.so|libshims_rilqc.so:/system/lib/hw/camera.msm8998.so|libshim_camera.so:/system/vendor/lib/libmmcamera_ppeiscore.so|libshim_camera.so:/system/vendor/lib/libcamera_bokeh_wrapper.so|libshim_camera.so"
 
     # Set permissions for persist partition
     mkdir /persist 0771 root system
