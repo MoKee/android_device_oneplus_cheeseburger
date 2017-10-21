@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2015-2016 The CyanogenMod Project
- *               2017 The LineageOS Project
+ *               2017 The MoKee Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,34 +15,20 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.doze;
+package org.mokee.settings.doze;
 
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.preference.PreferenceActivity;
 
-import com.android.settingslib.drawer.SettingsDrawerActivity;
-
-public class DozeSettingsActivity extends SettingsDrawerActivity {
+public class DozeSettingsActivity extends PreferenceActivity {
 
     private static final String TAG_DOZE = "doze";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.doze);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getFragmentManager().beginTransaction().replace(R.id.content_frame,
+        getFragmentManager().beginTransaction().replace(android.R.id.content,
                 new DozeSettingsFragment(), TAG_DOZE).commit();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                onBackPressed();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }
