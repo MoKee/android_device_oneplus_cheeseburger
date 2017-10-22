@@ -28,9 +28,4 @@ if [[ ! -f $ENCRYPTION ]]; then
     return 1
 fi
 
-# Encryption is not FBE
-if [[ "$(cat $ENCRYPTION)" != "ice" ]]; then
-    return 2
-fi
-
 return 0
