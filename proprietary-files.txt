@@ -236,17 +236,23 @@ lib/lib_oneplus_facebeauty.so
 lib/lib_oneplus_md.so
 lib/lib_oneplus_watermark.so
 lib/libFNVfbEngineHAL.so
+lib/libfilter-sdk.so
 lib/libmms_gyro_vstab_auth.so
 lib/libmms_gyro_vstab.so
 lib/libmms_hal_vstab.so
 lib/libmms_warper_vstab.so
 lib/libmorpho_image_stab4.so
 lib/libmorpho_video_refiner.so
+lib/libopbaselib.so
 lib/libopcamera_crypt.so
 lib/libopcamera_native_modules.so
 lib/libopcamera.so
 lib/libopcameralib.so
 lib/libSensorManagerHAL.so
+lib64/libfilter-sdk.so
+lib64/libopbaselib.so
+lib64/libopcamera.so
+lib64/libopcameralib.so
 
 # Camera / DSP - Hexagon libraries
 lib/rfsa/adsp/libVDHexagonBlurless_skel.so
