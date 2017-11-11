@@ -71,6 +71,11 @@ on init
     write /dev/stune/foreground/schedtune.colocate 0
     write /dev/stune/top-app/schedtune.colocate 1
 
+    # HACK: Force enable OTG until it can be switched automatically
+    # OnePlus want this to be disabled by default to update the firmware
+    # of their DASH chargers
+    write /sys/class/power_supply/usb/otg_switch 1
+
 on post-fs
     chown system system /proc/ship_mode
     chown system system /dev/param
