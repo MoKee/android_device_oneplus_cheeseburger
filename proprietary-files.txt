@@ -130,7 +130,6 @@ vendor/lib/libjni_makeupV2.so
 vendor/lib/libjni_panorama.so
 vendor/lib/libjni_ubifocus.so
 vendor/lib/libjni_blurbuster.so
-vendor/lib/libjni_dualcamera.so
 vendor/lib/libjni_filtergenerator.so
 vendor/lib/libjni_stillmore.so
 vendor/lib/libjni_sharpshooter.so
