@@ -27,7 +27,7 @@
 #
 #
 
-import init.qcom.power.rc
+import /vendor/etc/init/hw/init.qcom.power.rc
 
 on early-init
     mkdir /firmware 0771 system system
@@ -36,10 +36,10 @@ on early-init
     mkdir /dsp 0771 media media
 
 on fs
-    wait /dev/block/platform/soc/${ro.boot.bootdevice}
-    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
-    mount_all fstab.qcom
-    swapon_all fstab.qcom
+    wait /dev/block/platform/soc/1da4000.ufshc
+    symlink /dev/block/platform/soc/1da4000.ufshc /dev/block/bootdevice
+    mount_all /vendor/etc/fstab.qcom
+    swapon_all /vendor/etc/fstab.qcom
 
     # Keeping following partitions outside fstab file. As user may not have
     # these partition flashed on the device. Failure to mount any partition in fstab file
@@ -63,14 +63,6 @@ on fs
 on init
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
-    write /dev/stune/foreground/schedtune.sched_boost_no_override 1
-    write /dev/stune/top-app/schedtune.sched_boost_no_override 1
-    write /dev/stune/schedtune.colocate 0
-    write /dev/stune/background/schedtune.colocate 0
-    write /dev/stune/system-background/schedtune.colocate 0
-    write /dev/stune/foreground/schedtune.colocate 0
-    write /dev/stune/top-app/schedtune.colocate 1
-
 on post-fs
     chown system system /proc/ship_mode
     chown system system /dev/param
@@ -82,23 +74,24 @@ on post-fs
     chmod 0440 /sys/fs/pstore/console-ramoops-0
 
     start qseecomd
-    exec - root root root -- /system/bin/init.qti.qseecomd.sh
+    exec - system system -- /vendor/bin/init.qti.qseecomd.sh
 
     # Initialize IPA for rmnet
     write /dev/ipa 1
 
 on post-fs-data
-    mkdir /data/tombstones/modem 0771 system system
-    mkdir /data/tombstones/lpass 0771 system system
-    mkdir /data/tombstones/wcnss 0771 system system
-    mkdir /data/tombstones/dsps 0771 system system
-    mkdir /data/misc/qvop 0660 system system
-    mkdir /data/misc/hbtp 0750 system system
-    mkdir /data/misc/seemp 0700 system system
+    mkdir /data/tombstones 0771 system system
+    mkdir /tombstones/modem 0771 system system
+    mkdir /tombstones/lpass 0771 system system
+    mkdir /tombstones/wcnss 0771 system system
+    mkdir /tombstones/dsps 0771 system system
+    mkdir /data/vendor/hbtp 0750 system system
     mkdir /data/misc/qvr 0770 system system
-    mkdir /data/misc/camera/cp 0771 system system
-    mkdir /data/misc/qdmastats 0700 system system
-    mkdir /data/misc/qdma 0770 system system
+
+    #fingerint, changhua add for fp debug image usage,feature default off
+    mkdir /data/fpc_images 0770 system system
+    mkdir /data/fpc_images/verify 0770 system system
+    mkdir /data/fpc_images/enroll 0770 system system
 
     # Create oemnvitems for RIL
     mkdir /data/oemnvitems  0771 radio radio
@@ -150,12 +143,14 @@ on boot
     chown system system /sys/devices/soc/soc:fpc_fpc1020/irq
     chmod 0660 /sys/devices/soc/soc:fpc_fpc1020/report_home
     chown system system /sys/devices/soc/soc:fpc_fpc1020/report_home
+    chmod 0660 /sys/devices/soc/soc:fpc_fpc1020/report_key
+    chown system system /sys/devices/soc/soc:fpc_fpc1020/report_key
     chmod 0660 /sys/devices/soc/soc:fpc_fpc1020/update_info
     chown system system /sys/devices/soc/soc:fpc_fpc1020/update_info
     chmod 0660 /sys/devices/soc/soc:fpc_fpc1020/screen_state
     chown system system /sys/devices/soc/soc:fpc_fpc1020/screen_state
-    chmod 0660 /sys/devices/soc/soc:fpc_fpc1020/sensor_version
-    chown system system /sys/devices/soc/soc:fpc_fpc1020/sensor_version
+    chmod 0660 /sys/devices/soc/soc:fingerprint_detect/sensor_version
+    chown system system /sys/devices/soc/soc:fingerprint_detect/sensor_version
     chmod 0660 /sys/devices/soc/soc:fpc_fpc1020/hw_reset
     chown system system /sys/devices/soc/soc:fpc_fpc1020/hw_reset
 
@@ -239,30 +234,14 @@ on boot
     # Wi-Fi
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
-#fingerprint service
-service fingerprintd /system/bin/fingerprintd
-    class late_start
-    user system
-    group system
-
-service qvop-daemon /system/bin/qvop-daemon
-    class late_start
-    user system
-    group system drmrpc
-
-service qvrd /system/vendor/bin/qvrservice
-    class late_start
-    user system
-    group system camera graphics
-    socket qvrservice stream 0666 system system
-
-#Start up peripheral manager
-service per_mgr /system/bin/pm-service
+#Peripheral manager
+service per_mgr /vendor/bin/pm-service
     class core
     user root
+    group root
     ioprio rt 4
 
-service per_proxy /system/bin/pm-proxy
+service per_proxy /vendor/bin/pm-proxy
     class core
     user system
     group system
@@ -274,17 +253,15 @@ on property:init.svc.per_mgr=running
 on property:sys.shutdown.requested=*
     stop per_proxy
 
-service qseecomd /system/bin/qseecomd
+service qseecomd /vendor/bin/qseecomd
    class core
    user root
    group root
 
-service seempd /system/bin/seempd
-    class late_start
-    user system
-    group system
-    socket seempdw dgram 0666 system system
-    disabled
+service spdaemon /vendor/bin/spdaemon
+   class core
+   user system
+   group system
 
 service thermal-engine /system/vendor/bin/thermal-engine
    class main
@@ -292,30 +269,32 @@ service thermal-engine /system/vendor/bin/thermal-engine
    socket thermal-send-client stream 0666 system system
    socket thermal-recv-client stream 0660 system system
    socket thermal-recv-passive-client stream 0666 system system
+   socket thermal-send-rule stream 0660 system system
    group root
 
-service time_daemon /system/bin/time_daemon
-   class late_start
-   user root
-   group root
-
-service adsprpcd /system/bin/adsprpcd
+service adsprpcd /system/vendor/bin/adsprpcd
    class main
    user media
    group media
 
-service audiod /system/bin/audiod
+service hbtp /system/vendor/bin/hbtp_daemon
+    class main
+    user system
+    group system
+    disabled
+
+service audiod /system/vendor/bin/audiod
    class late_start
    user system
    group system
 
-service imsqmidaemon /system/bin/imsqmidaemon
+service imsqmidaemon /system/vendor/bin/imsqmidaemon
     class main
     user system
     socket ims_qmid stream 0660 system radio
     group radio log diag
 
-service imsdatadaemon /system/bin/imsdatadaemon
+service imsdatadaemon /system/vendor/bin/imsdatadaemon
     class main
     user system
     socket ims_datad stream 0660 system radio
@@ -325,54 +304,57 @@ service imsdatadaemon /system/bin/imsdatadaemon
 service pd_mapper /system/vendor/bin/pd-mapper
      class core
 
-on property:sys.ims.QMI_DAEMON_STATUS=1
+#
+## QCA1530 SoC late_start group trigger
+#service gnss-init /system/vendor/bin/gnss.qca1530.sh init
+#   class late_start
+#   oneshot
+#
+## QCA1530 SoC Service Daemon
+#service gnss-svcd /system/vendor/bin/gnss.qca1530.sh start
+#   class late_start
+#   user root
+#   group gps system oem_2901 diag log inet net_raw
+#   disabled
+
+on property:vendor.ims.QMI_DAEMON_STATUS=1
     start imsdatadaemon
 
-service ims_rtp_daemon /system/bin/ims_rtp_daemon
-   class main
-   user system
-   socket ims_rtpd stream 0660 system radio
-   group radio diag inet log
-   disabled
-
-service imscmservice /system/bin/imscmservice
+service ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
    class main
    user system
    group radio diag inet log
    disabled
 
-on property:sys.ims.DATA_DAEMON_STATUS=1
+service vendor.imsrcsservice /system/vendor/bin/imsrcsd
+   class main
+   user system
+   group radio diag inet log
+   disabled
+
+on property:vendor.ims.DATA_DAEMON_STATUS=1
     start ims_rtp_daemon
-    start imscmservice
+    start vendor.imsrcsservice
 
-service ppd /system/vendor/bin/mm-pp-dpps
+service ppd /vendor/bin/mm-pp-dpps
     class late_start
     user system
     group system graphics
     socket pps stream 0660 system system
     disabled
 
-on property:init.svc.surfaceflinger=stopped
+on property:init.svc.hwcomposer-2-1=stopped
     stop ppd
 
-on property:init.svc.surfaceflinger=running
+on property:init.svc.hwcomposer-2-1=running
     start ppd
 
-on property:init.svc.surfaceflinger=restarting
+on property:init.svc.hwcomposer-2-1=restarting
     stop ppd
 
-on property:init.svc.zygote=stopped
-    stop ppd
-
-on property:init.svc.zygote=running
-    start ppd
-
-on property:init.svc.zygote=restarting
-    stop ppd
-
-service energy-awareness /system/bin/energy-awareness
+service energy-awareness /system/vendor/bin/energy-awareness
     class main
-    user system
+    user root
     group system
     oneshot
 
@@ -392,23 +374,33 @@ service ifaadaemon /system/bin/ifaadaemon
     user system
     group system
 
-service spdaemon /system/bin/spdaemon
-   class core
-   user system
-   group system
-
-service hbtp /system/vendor/bin/hbtp_daemon
-    class main
-    user system
-    group system
-    disabled
-
-service smcinvoked /system/vendor/bin/smcinvoked
-    class main
-    user system
-    group system
-
-service qdmastatsd /system/bin/qdmastatsd
+service qvrd /system/bin/qvrservice
     class late_start
     user system
-    group system
+    group system camera graphics
+    socket qvrservice stream 0666 system system
+    capabilities SYS_NICE
+
+on property:sys.srgb=1
+   write /sys/devices/virtual/graphics/fb0/SRGB 1
+on property:sys.srgb=0
+   write /sys/devices/virtual/graphics/fb0/SRGB 0
+
+on property:sys.dci3p=1
+   write /sys/devices/virtual/graphics/fb0/DCI_P3 1
+on property:sys.dci3p=0
+   write /sys/devices/virtual/graphics/fb0/DCI_P3 0
+
+on property:sys.hbm=1
+   write /sys/devices/virtual/graphics/fb0/hbm 1
+on property:sys.hbm=0
+   write /sys/devices/virtual/graphics/fb0/hbm 0
+
+on property:sys.night_mode=1
+   write /sys/devices/virtual/graphics/fb0/night_mode 1
+on property:sys.night_mode=0
+   write /sys/devices/virtual/graphics/fb0/night_mode 0
+on property:sys.automode=1
+   write /sys/devices/virtual/graphics/fb0/adaption_mode 1
+on property:sys.automode=0
+   write /sys/devices/virtual/graphics/fb0/adaption_mode 0
