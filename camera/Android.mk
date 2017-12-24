@@ -22,4 +22,6 @@ LOCAL_SRC_FILES := \
 LOCAL_MODULE := libcamera_parameters_ext
 LOCAL_MODULE_TAGS := optional
 
+LOCAL_CFLAGS := -DVENDOR_ONEPLUS
+
 include $(BUILD_STATIC_LIBRARY)
