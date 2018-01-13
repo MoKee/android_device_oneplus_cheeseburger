@@ -70,4 +70,4 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/camera/imx398_chromatix.xml:system/etc/camera/imx398_chromatix.xml
 
 # Inherit from oneplus-common
-$(call inherit-product, device/oneplus/common/common.mk)
+$(call inherit-product, device/oneplus/msm8998-common/common.mk)
