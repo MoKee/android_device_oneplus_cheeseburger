@@ -16,4 +16,4 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 
-cp $ANDROID_BUILD_TOP/device/oneplus/cheeseburger/fbe_check.sh out/
+cp $ANDROID_BUILD_TOP/device/oneplus/msm8998-common/fbe_check.sh out/
