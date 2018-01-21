@@ -156,11 +156,9 @@ lib/libjni_trueportrait.so
 lib/libjni_truescanner_v2.so
 lib/libjni_ubifocus.so
 lib/libscveBlobDescriptor.so
-lib/libscveBlobDescriptor_skel.so
 lib/libscveBlobDescriptor_stub.so
 lib/libscveCommon.so
 lib/libscveCommon_stub.so
-lib/libscveFaceLandmark_skel.so
 lib/libscveFaceLandmarks.so
 lib/libscveFaceLandmarks_stub.so
 lib/libscveFaceRecognition.so
@@ -170,7 +168,6 @@ lib/libscveObjectTracker.so
 lib/libscveObjectTracker_stub.so
 lib/libscvePanorama.so
 lib/libscvePanorama_lite.so
-lib/libscveT2T_skel.so
 lib64/libblurbuster.so
 lib64/libjni_blurbuster.so
 lib64/libjni_chromaflash.so
@@ -285,6 +282,7 @@ vendor/lib/libchromatix_imx398_3a_4656x2608_30fps_preview.so
 vendor/lib/libchromatix_imx398_3a_4656x2608_30fps_video.so
 vendor/lib/libchromatix_imx398_3a_4656x2608_30fps_video_4k.so
 vendor/lib/libchromatix_imx398_3a_4656x3496_30fps_preview.so
+vendor/lib/libchromatix_imx398_3a_4656x3496_30fps_video.so
 vendor/lib/libchromatix_imx398_3a_hq.so
 vendor/lib/libchromatix_imx398_3a_manual.so
 vendor/lib/libchromatix_imx398_3a_panorama.so
@@ -299,6 +297,7 @@ vendor/lib/libchromatix_imx398_cpp_4656x2608_30fps_video.so
 vendor/lib/libchromatix_imx398_cpp_4656x2608_30fps_video_4k.so
 vendor/lib/libchromatix_imx398_cpp_4656x3496_30fps_preview.so
 vendor/lib/libchromatix_imx398_cpp_4656x3496_30fps_snapshot.so
+vendor/lib/libchromatix_imx398_cpp_4656x3496_30fps_video.so
 vendor/lib/libchromatix_imx398_cpp_snapshot_flash.so
 vendor/lib/libchromatix_imx398_cpp_snapshot_hdr.so
 vendor/lib/libchromatix_imx398_cpp_snapshot_manual.so
@@ -311,6 +310,7 @@ vendor/lib/libchromatix_imx398_isp_3264x2448_30fps_snapshot_bokeh.so
 vendor/lib/libchromatix_imx398_isp_4656x2608_30fps_video.so
 vendor/lib/libchromatix_imx398_isp_4656x3496_30fps_preview.so
 vendor/lib/libchromatix_imx398_isp_4656x3496_30fps_snapshot.so
+vendor/lib/libchromatix_imx398_isp_4656x3496_30fps_video.so
 vendor/lib/libchromatix_imx398_isp_manual.so
 vendor/lib/libchromatix_imx398_isp_panorama.so
 vendor/lib/libchromatix_imx398_isp_zsl_snapshot.so
