@@ -18,6 +18,12 @@ etc/camera/cp/SystemParamsBokeh.bin
 etc/camera/cp/SystemParamsFusion.bin
 etc/camera/cp/systemParams.bin
 etc/camera/license.lic
+etc/camera/sticker/dog.zip
+etc/camera/sticker/huzi.zip
+etc/camera/sticker/megviifacepp_0_4_7_model
+etc/camera/sticker/mgbeautify_1_2_3_model
+etc/camera/sticker/tuzi.zip
+etc/camera/sticker/wanzai.zip
 lib/libVDBlurlessAPI.so
 lib/libVDHDRAPI.so
 lib/libfiltergenerator.so
@@ -32,6 +38,7 @@ vendor/etc/camera/imx371_chromatix.xml
 vendor/etc/camera/imx376k_chromatix.xml
 vendor/etc/camera/imx398_chromatix.xml
 vendor/lib/hw/camera.msm8998.so
+vendor/lib/libSTDualCamCaptureBokeh.so
 vendor/lib/libSTDualCamPreviewBokeh.so
 vendor/lib/libSTdisp.so
 vendor/lib/libSonyIMX350PdafLibrary.so
@@ -123,6 +130,7 @@ vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libseemore.so
 vendor/lib/libthread_blur.so
 vendor/lib/libubifocus.so
+vendor/lib/libvideobokeh.so
 vendor/lib64/libcdsprpc.so
 vendor/lib64/libchromaflash.so
 vendor/lib64/libmmcamera2_frame_algorithm.so
@@ -140,6 +148,7 @@ vendor/lib64/libseemore.so
 
 # Camera app modules
 lib/libblurbuster.so
+lib/libdualcameraddm.so
 lib/libjni_blurbuster.so
 lib/libjni_chromaflash.so
 lib/libjni_dualcamera.so
@@ -177,6 +186,7 @@ lib64/libjni_filtergenerator.so
 lib64/libjni_hazebuster.so
 lib64/libjni_makeupV2.so
 lib64/libjni_optizoom.so
+lib64/libjni_pacprocessor.so
 lib64/libjni_panorama.so
 lib64/libjni_seestraight.so
 lib64/libjni_sharpshooter.so
@@ -318,6 +328,14 @@ vendor/lib/libchromatix_imx398_postproc.so
 vendor/lib/libchromatix_imx398_preview_1080p_cpp.so
 
 # Camera postprocessing
+etc/GyroOffset_db.config
+etc/fsync_db.config
+etc/oneplus5_vstab_db_1080p_video_0_30fps.config
+etc/oneplus5_vstab_db_1080p_video_0_60fps.config
+etc/oneplus5_vstab_db_1080p_video_1_30fps.config
+etc/oneplus5_vstab_db_4k_video_0_30fps.config
+etc/oneplus5_vstab_db_720p_video_0_30fps.config
+etc/oneplus5_vstab_db_720p_video_1_30fps.config
 lib/libSensorManagerHAL.so
 lib/lib_oneplus_facebeauty.so
 lib/lib_oneplus_watermark.so
@@ -414,7 +432,4 @@ vendor/firmware/leia_pm4_470.fw
 -framework/org.simalliance.openmobileapi.jar
 -priv-app/SmartcardService/SmartcardService.apk
 etc/permissions/org.simalliance.openmobileapi.xml
-
-# Sensors
-vendor/framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
 
