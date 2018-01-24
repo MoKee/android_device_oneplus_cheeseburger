@@ -186,7 +186,6 @@ lib64/libjni_filtergenerator.so
 lib64/libjni_hazebuster.so
 lib64/libjni_makeupV2.so
 lib64/libjni_optizoom.so
-lib64/libjni_pacprocessor.so
 lib64/libjni_panorama.so
 lib64/libjni_seestraight.so
 lib64/libjni_sharpshooter.so
