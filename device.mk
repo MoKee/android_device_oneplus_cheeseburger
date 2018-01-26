@@ -62,11 +62,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/mixer_paths_tasha.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_tasha.xml
 
-# Camera
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/camera/imx350_chromatix.xml:system/etc/camera/imx350_chromatix.xml \
-    $(LOCAL_PATH)/camera/imx371_chromatix.xml:system/etc/camera/imx371_chromatix.xml \
-    $(LOCAL_PATH)/camera/imx398_chromatix.xml:system/etc/camera/imx398_chromatix.xml
-
 # Inherit from oneplus-common
 $(call inherit-product, device/oneplus/msm8998-common/common.mk)
