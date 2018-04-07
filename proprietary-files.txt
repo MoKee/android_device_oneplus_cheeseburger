@@ -9,8 +9,8 @@ vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
 vendor/etc/acdbdata/adsp_avs_config.acdb
 
 # Fingerprint sensor
-lib/hw/fingerprint.msm8998.so
-lib64/hw/fingerprint.msm8998.so
+lib/hw/fingerprint.msm8998.so:vendor/lib/hw/fingerprint.msm8998.so
+lib64/hw/fingerprint.msm8998.so:vendor/lib64/hw/fingerprint.msm8998.so
 
 # LEIA
 vendor/firmware/leia_pfp_470.fw
