@@ -34,9 +34,9 @@ PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
         PRODUCT_NAME=OnePlus5 \
-        PRIVATE_BUILD_DESC="OnePlus5-user 8.1.0 OPM1.171019.011 14 release-keys"
+        PRIVATE_BUILD_DESC="OnePlus5-user 8.1.0 OPM1.171019.011 27 release-keys"
 
-BUILD_FINGERPRINT := OnePlus/OnePlus5/OnePlus5:8.1.0/OPM1.171019.011/03242316:user/release-keys
+BUILD_FINGERPRINT := OnePlus/OnePlus5/OnePlus5:8.1.0/OPM1.171019.011/04082344:user/release-keys
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.mk.maintainer=cheeseburger-dev
