@@ -34,8 +34,8 @@ TARGET_OTA_ASSERT_DEVICE := cheeseburger,OnePlus5,oneplus5
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
 
-# Lineage Hardware
-BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/lineagehw
+# MK Hardware
+BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/mkhw
 
 # inherit from the proprietary version
 -include vendor/oneplus/cheeseburger/BoardConfigVendor.mk
