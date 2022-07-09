@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "vendor.lineage.touch@1.0-service.cheeseburger"
+#define LOG_TAG "vendor.mokee.touch@1.0-service.cheeseburger"
 
 #include <android-base/logging.h>
 #include <hidl/HidlTransportSupport.h>
@@ -28,12 +28,12 @@ using android::sp;
 using android::hardware::configureRpcThreadpool;
 using android::hardware::joinRpcThreadpool;
 
-using ::vendor::lineage::touch::V1_0::IKeyDisabler;
-using ::vendor::lineage::touch::V1_0::IKeySwapper;
-using ::vendor::lineage::touch::V1_0::ITouchscreenGesture;
-using ::vendor::lineage::touch::V1_0::implementation::KeyDisabler;
-using ::vendor::lineage::touch::V1_0::implementation::KeySwapper;
-using ::vendor::lineage::touch::V1_0::implementation::TouchscreenGesture;
+using ::vendor::mokee::touch::V1_0::IKeyDisabler;
+using ::vendor::mokee::touch::V1_0::IKeySwapper;
+using ::vendor::mokee::touch::V1_0::ITouchscreenGesture;
+using ::vendor::mokee::touch::V1_0::implementation::KeyDisabler;
+using ::vendor::mokee::touch::V1_0::implementation::KeySwapper;
+using ::vendor::mokee::touch::V1_0::implementation::TouchscreenGesture;
 
 int main() {
     sp<IKeyDisabler> key_disabler = new KeyDisabler();

@@ -13,14 +13,14 @@
 // limitations under the License.
 
 cc_binary {
-    name: "vendor.lineage.touch@1.0-service.cheeseburger",
-    init_rc: ["vendor.lineage.touch@1.0-service.cheeseburger.rc"],
+    name: "vendor.mokee.touch@1.0-service.cheeseburger",
+    init_rc: ["vendor.mokee.touch@1.0-service.cheeseburger.rc"],
     defaults: ["hidl_defaults"],
-    vintf_fragments: ["vendor.lineage.touch@1.0-service.cheeseburger.xml"],
+    vintf_fragments: ["vendor.mokee.touch@1.0-service.cheeseburger.xml"],
     relative_install_path: "hw",
     vendor: true,
     srcs: [
-        ":vendor.lineage.touch@1.0-oneplus-touchgesture",
+        ":vendor.mokee.touch@1.0-oneplus-touchgesture",
         "KeyDisabler.cpp",
         "KeySwapper.cpp",
         "service.cpp"
@@ -30,9 +30,9 @@ cc_binary {
         "libbinder",
         "libhidlbase",
         "libutils",
-        "vendor.lineage.touch@1.0",
+        "vendor.mokee.touch@1.0",
     ],
     header_libs: [
-        "vendor.lineage.touch@1.0-oneplus-headers",
+        "vendor.mokee.touch@1.0-oneplus-headers",
     ],
 }

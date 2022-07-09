@@ -25,14 +25,14 @@ constexpr const char kControlPath[] = "/proc/s1302/key_rep";
 };  // anonymous namespace
 
 namespace vendor {
-namespace lineage {
+namespace mokee {
 namespace touch {
 namespace V1_0 {
 namespace implementation {
 
 KeySwapper::KeySwapper() : has_key_swapper_(!access(kControlPath, R_OK | W_OK)) {}
 
-// Methods from ::vendor::lineage::touch::V1_0::IKeySwapper follow.
+// Methods from ::vendor::mokee::touch::V1_0::IKeySwapper follow.
 Return<bool> KeySwapper::isEnabled() {
     if (!has_key_swapper_) return false;
 
@@ -59,5 +59,5 @@ Return<bool> KeySwapper::setEnabled(bool enabled) {
 }  // namespace implementation
 }  // namespace V1_0
 }  // namespace touch
-}  // namespace lineage
+}  // namespace mokee
 }  // namespace vendor

@@ -27,14 +27,14 @@ constexpr const char kFpcPath[] =
 };  // anonymous namespace
 
 namespace vendor {
-namespace lineage {
+namespace mokee {
 namespace touch {
 namespace V1_0 {
 namespace implementation {
 
 KeyDisabler::KeyDisabler() : has_key_disabler_(!access(kControlPath, R_OK | W_OK)) {}
 
-// Methods from ::vendor::lineage::touch::V1_0::IKeyDisabler follow.
+// Methods from ::vendor::mokee::touch::V1_0::IKeyDisabler follow.
 Return<bool> KeyDisabler::isEnabled() {
     if (!has_key_disabler_) return false;
 
@@ -71,6 +71,6 @@ Return<bool> KeyDisabler::setEnabled(bool enabled) {
 }  // namespace implementation
 }  // namespace V1_0
 }  // namespace touch
-}  // namespace lineage
+}  // namespace mokee
 }  // namespace vendor
 
